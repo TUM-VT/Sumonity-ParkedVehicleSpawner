@@ -19,5 +19,5 @@ After setting up the project, you can adjust the occupancy rate and vehicle type
 
 ## Notes
 - When adding or changing vehicle prefabs, always check their heights to ensure they fit within the designated parking spots.
-- Ensure the `tum_main.xodr` file is correctly placed in the `StreamingAssets` folder for the simulation to run properly.
+- Ensure the `tum_main.xodr` file is the latest version and correctly placed in the `StreamingAssets` folder for the simulation to run properly.
 
