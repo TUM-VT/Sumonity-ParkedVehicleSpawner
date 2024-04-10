@@ -30,7 +30,7 @@ public class getParkingSpots : MonoBehaviour
             return;
         }
 
-        string filePath = Path.Combine(Application.streamingAssetsPath, "tum_main.xodr");
+        string filePath = "Assets/3d_model/tum_main.xodr";
 
         if (File.Exists(filePath))
         {
