@@ -115,12 +115,20 @@ public class getParkingSpots : MonoBehaviour
         GameObject vehiclePrefab = parkingSpacePrefabs[prefabIndex];
 
         // Instantiate the vehicle at the origin relative to the vehiclesSubParent
-        GameObject vehicleObject = Instantiate(vehiclePrefab, Vector3.zero, rotation, vehiclesSubParent.transform);
+        GameObject vehicleObject = Instantiate(vehiclePrefab, Vector3.zero,rotation, vehiclesSubParent.transform);
+
 
         // Set the local position to the calculated local position
         vehicleObject.transform.localPosition = localPosition;
 
         vehicleObject.name = $"Vehicles_{parkingSpots[index].id}";
+
+        Transform colliderTransform = vehicleObject.transform.Find("Collider");
+
+        if (colliderTransform != null)
+        {
+            colliderTransform.gameObject.SetActive(false);
+        }
     }
 
 }
