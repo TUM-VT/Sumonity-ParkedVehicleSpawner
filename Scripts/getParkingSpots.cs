@@ -22,26 +22,26 @@ public class getParkingSpots : MonoBehaviour
     
     void Start()
     {
-        parkingParent = GameObject.Find("Parking");
-
-        if (!parkingParent)
-        {
-            Debug.LogError("Parking parent object not found in the scene. Make sure there's a GameObject named 'Parking'.");
-            return;
-        }
-
-        string filePath = "Assets/3d_model/tum_main.xodr";
-
-        if (File.Exists(filePath))
-        {
-            string xodrContent = File.ReadAllText(filePath);
-            ParseXODR(xodrContent);
-            SpawnParkingSpotsAndvehicles();
-        }
-        else
-        {
-            Debug.LogError("XODR file not found at: " + filePath);
-        }
+        //parkingParent = GameObject.Find("Parking");
+//
+        //if (!parkingParent)
+        //{
+        //    Debug.LogError("Parking parent object not found in the scene. Make sure there's a GameObject named 'Parking'.");
+        //    return;
+        //}
+//
+        //string filePath = "Assets/3d_model/tum_main_groupA.xodr";
+//
+        //if (File.Exists(filePath))
+        //{
+        //    string xodrContent = File.ReadAllText(filePath);
+        //    ParseXODR(xodrContent);
+        //    SpawnParkingSpotsAndvehicles();
+        //}
+        //else
+        //{
+        //    Debug.LogError("XODR file not found at: " + filePath);
+        //}
     }
 
     void ParseXODR(string xmlContent)
@@ -157,4 +157,27 @@ public class getParkingSpots : MonoBehaviour
     //         Debug.LogError("Parking space prefabs are not assigned or the array is empty.");
     //     }
     // }
+    public void Starter()
+    {
+        parkingParent = GameObject.Find("Parking");
+
+        if (!parkingParent)
+        {
+            Debug.LogError("Parking parent object not found in the scene. Make sure there's a GameObject named 'Parking'.");
+            return;
+        }
+
+        string filePath = "Assets/3d_model/tum_main_groupA.xodr";
+
+        if (File.Exists(filePath))
+        {
+            string xodrContent = File.ReadAllText(filePath);
+            ParseXODR(xodrContent);
+            SpawnParkingSpotsAndvehicles();
+        }
+        else
+        {
+            Debug.LogError("XODR file not found at: " + filePath);
+        }
+    }
 }
