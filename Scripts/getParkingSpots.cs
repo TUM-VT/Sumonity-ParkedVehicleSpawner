@@ -109,7 +109,7 @@ public class getParkingSpots : MonoBehaviour
             localPosition.y = 0.97f;
             break;
         default:
-            localPosition.y = 0.75f;
+            localPosition.y = 0.0f;
             break;
     }
         GameObject vehiclePrefab = parkingSpacePrefabs[prefabIndex];
